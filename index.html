@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsible Gaming – Meridianbet</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root {
+        --page-bg: #16232a;
+        --card-bg: #10181c;
+        --text: #cacaca;
+        --link: #f4c00a;
+        --border: #396f85;
+        --button: #17bb00;
+
+        /* optional extras */
+        --muted: rgba(202, 202, 202, 0.75);
+        --border-soft: rgba(57, 111, 133, 0.55);
+        --shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background-color: var(--page-bg);
+
+        background-image: radial-gradient(
+            1400px 900px at 20% -10%,
+            rgba(57, 111, 133, 0.35),
+            rgba(57, 111, 133, 0.12) 48%,
+            rgba(22, 35, 42, 0) 78%
+          ),
+          radial-gradient(
+            1000px 700px at 110% 20%,
+            rgba(244, 192, 10, 0.18),
+            rgba(244, 192, 10, 0.06) 50%,
+            rgba(22, 35, 42, 0) 82%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(0, 0, 0, 0) 35%,
+            rgba(0, 0, 0, 0.2)
+          );
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+        color: var(--text);
+        font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial,
+          sans-serif;
+
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.06;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Roboto Condensed", "Roboto", system-ui, sans-serif;
+        letter-spacing: 0.2px;
+      }
+
+      a {
+        color: var(--link);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .card-shell {
+        background: rgba(16, 24, 28, 0.35);
+        border: 1px solid var(--border-soft);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-soft);
+      }
+
+      .section {
+        border: 1px solid var(--border-soft);
+      }
+
+      .title-accent {
+        position: relative;
+        display: inline-block;
+      }
+      .title-accent::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          var(--link),
+          rgba(244, 192, 10, 0.12)
+        );
+      }
+
+      .glow-hover:hover {
+        box-shadow: 0 0 0 1px rgba(244, 192, 10, 0.18),
+          0 22px 70px rgba(0, 0, 0, 0.55);
+        transform: translateY(-1px);
+        transition: 200ms ease;
+      }
+
+      .btn {
+        background: var(--button);
+        color: #07140a;
+      }
+      .btn:hover {
+        filter: brightness(1.05);
+      }
+
+      .pill {
+        border: 1px solid var(--border-soft);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .link {
+        color: var(--link);
+      }
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--border),
+          transparent
+        );
+        opacity: 0.65;
+      }
+
+      .lang-active {
+        box-shadow: 0 0 0 2px rgba(244, 192, 10, 0.35),
+          0 10px 26px rgba(0, 0, 0, 0.55) !important;
+        border-color: rgba(244, 192, 10, 0.35) !important;
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(57, 111, 133, 0.9) rgba(16, 24, 28, 0.9);
+      }
+
+      ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: linear-gradient(
+          180deg,
+          rgba(16, 24, 28, 0.95),
+          rgba(22, 35, 42, 0.95)
+        );
+        border-left: 1px solid rgba(57, 111, 133, 0.35);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          180deg,
+          rgba(57, 111, 133, 0.95),
+          rgba(57, 111, 133, 0.55)
+        );
+        border-radius: 999px;
+        border: 3px solid rgba(16, 24, 28, 0.9);
+        box-shadow: 0 0 0 1px rgba(244, 192, 10, 0.15);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(
+          180deg,
+          rgba(244, 192, 10, 0.35),
+          rgba(57, 111, 133, 0.95)
+        );
+        box-shadow: 0 0 0 1px rgba(244, 192, 10, 0.3);
+      }
+
+      ::-webkit-scrollbar-thumb:active {
+        background: rgba(244, 192, 10, 0.5);
+      }
+
+      ::-webkit-scrollbar-corner {
+        background: rgba(16, 24, 28, 0.95);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen">
+    <main class="mx-auto max-w-4xl px-4 py-8 md:py-12">
+      <div class="card-shell rounded-2xl p-3 md:p-4">
+        <div class="rounded-2xl overflow-hidden">
+          <div class="card rounded-2xl">
+            <header
+              class="sticky top-0 z-50 w-full shrink-0 bg-[linear-gradient(90deg,#A6080E_0%,#D11101_100%)] px-4 md:px-8 py-2 border-b border-white/10 backdrop-blur-md"
+            >
+              <div class="flex items-center justify-between gap-3">
+                <a
+                  href="https://meridianbet.rs"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Meridianbet main site"
+                  class="flex items-center"
+                >
+                  <img
+                    src="/img/logo.svg"
+                    alt="Meridianbet"
+                    class="h-9 md:h-[24px] w-auto"
+                  />
+                </a>
+
+                <div class="min-w-0 flex-1 text-center px-2">
+                  <div
+                    class="text-white font-bold text-[16px] md:text-[18px] leading-tight"
+                    data-i18n="pageTitle"
+                  >
+                    Responsible Gaming
+                  </div>
+                  <div
+                    class="hidden md:block text-white/80 text-[12px] leading-snug"
+                    data-i18n="pageSubtitle"
+                  >
+                    Information, guidance, and self-protection tools.
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    data-lang-btn="en"
+                    class="relative z-30 flex items-center justify-center w-[44px] h-[36px] bg-white/10 border border-white/20 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:bg-white/15 transition rounded-[10px]"
+                    aria-label="Switch to English"
+                    title="English"
+                  >
+                    <img
+                      src="/img/en.svg"
+                      alt="English"
+                      class="w-[22px] h-[22px] rounded-[6px] object-cover"
+                    />
+                  </button>
+
+                  <button
+                    type="button"
+                    data-lang-btn="fr"
+                    class="relative z-30 flex items-center justify-center w-[44px] h-[36px] bg-white/10 border border-white/20 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:bg-white/15 transition rounded-[10px]"
+                    aria-label="Switch to French"
+                    title="Français"
+                  >
+                    <img
+                      src="/img/fr.svg"
+                      alt="Français"
+                      class="w-[22px] h-[22px] rounded-[6px] object-cover"
+                    />
+                  </button>
+                </div>
+              </div>
+            </header>
+
+            <div class="px-5 py-6 md:px-8 md:py-8">
+              <nav class="mb-6 flex flex-wrap gap-2">
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#security"
+                  data-i18n="navSecurity"
+                  >Security</a
+                >
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#addiction"
+                  data-i18n="navAddiction"
+                  >Addiction</a
+                >
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#minors"
+                  data-i18n="navMinors"
+                  >Minors</a
+                >
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#definition"
+                  data-i18n="navDefinition"
+                  >Problem Behavior</a
+                >
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#warning"
+                  data-i18n="navWarning"
+                  >Warning signs</a
+                >
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#recognizing"
+                  data-i18n="navRecognizing"
+                  >Action taken</a
+                >
+
+                <!-- NEW nav items -->
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#self-details"
+                  data-i18n="navSelfDetails"
+                  >Self-protection (details)</a
+                >
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#refuse"
+                  data-i18n="navRefuse"
+                  >Refuse service</a
+                >
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#training"
+                  data-i18n="navTraining"
+                  >Training</a
+                >
+
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#self"
+                  data-i18n="navSelf"
+                  >Self-protection</a
+                >
+                <a
+                  class="pill rounded-full px-3 py-1.5 text-sm"
+                  href="#reality"
+                  data-i18n="navReality"
+                  >Reality check</a
+                >
+              </nav>
+
+              <!-- intro -->
+              <section
+                class="section glow-hover rounded-2xl p-5 md:p-6"
+                aria-labelledby="intro-title"
+              >
+                <h2 id="intro-title" class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="introTitle"
+                    >Our approach</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="introP1"
+                >
+                  Meridianbet strives to create a responsible and humble gaming
+                  environment for each and everyone playing at Meridianbet. To
+                  most people gaming is socially enjoyable and a harmless source
+                  of entertainment.
+                </p>
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="introP2"
+                >
+                  Every user can play within their financial means and receive
+                  the best possible service. But sometimes it just becomes too
+                  much and a small number of players just can't say no to that
+                  extra spin on the slots or that extra bet.
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Security -->
+              <section id="security" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="secTitle"
+                    >Security of the player and the game</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="secP1"
+                >
+                  We take responsibility for the security of our players.
+                  Protection of players is based on exclusion of minors from the
+                  product line-up and the protection of privacy, which involves
+                  responsible dealings with data and payment processing.
+                </p>
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="secP2"
+                >
+                  Fairness and the random nature of the products offered are
+                  monitored closely by independent authorities. Marketing
+                  communication is also geared towards player protection: a fair
+                  gaming product only promises what it can deliver.
+                </p>
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="secP3"
+                >
+                  Online monitoring at Meridianbet as well as the experience of
+                  our employees ensures protection against fraud. Manipulation
+                  of bets and money laundering are crimes and not a game.
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Addiction -->
+              <section id="addiction" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="addTitle"
+                    >Protection against gaming addiction</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="addP1"
+                >
+                  Betting should be considered as a fun way to spend time, not
+                  as a way to make money. Participation in bets and games of
+                  chance can lead to problems for a small group of customers.
+                </p>
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="addP2"
+                >
+                  In order to offer customers the best possible support all user
+                  contact which is related to responsible gaming is dealt by a
+                  dedicated support team. This team works together with other
+                  departments and provides recommendations for customers on the
+                  extent to which is possible for them to play responsibly.
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Minors -->
+              <section id="minors" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="minTitle"
+                    >Protection of minors</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="minP1"
+                >
+                  Meridianbet excludes minors (persons under the age of 18) from
+                  participation in online gaming. Confirmation of having reached
+                  the age of majority and date of birth is therefore a mandatory
+                  part of the registration. A copy of photographic
+                  identification is also required at this stage. Meridianbet
+                  takes its responsibility for preventing minors from taking
+                  part in gaming seriously.
+                </p>
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="minP2"
+                >
+                  Also we recommend that you install software that enables you
+                  to block and filter web traffic in order to prevent minors
+                  from reaching betting and gambling websites.
+                </p>
+
+                <ul class="mt-4 grid gap-2 text-sm md:text-[15px]">
+                  <li>
+                    <a
+                      href="https://www.cyberpatrol.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      class="pill glow-hover flex items-center justify-between gap-3 rounded-xl px-4 py-2 text-[color:var(--muted)] hover:text-[color:var(--text)]"
+                      aria-label="CyberPatrol website"
+                    >
+                      <span>CyberPatrol</span>
+                      <span
+                        class="inline-flex items-center gap-2 text-xs text-[color:var(--muted)]"
+                      >
+                        <span class="hidden sm:inline">cyberpatrol.com</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          class="h-4 w-4"
+                        >
+                          <path
+                            d="M14 5h5v5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10 14L19 5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M19 14v5H5V5h5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.8"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.surfcontrol.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      class="pill glow-hover flex items-center justify-between gap-3 rounded-xl px-4 py-2 text-[color:var(--muted)] hover:text-[color:var(--text)]"
+                      aria-label="SurfControl website"
+                    >
+                      <span>SurfControl</span>
+                      <span
+                        class="inline-flex items-center gap-2 text-xs text-[color:var(--muted)]"
+                      >
+                        <span class="hidden sm:inline">surfcontrol.com</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          class="h-4 w-4"
+                        >
+                          <path
+                            d="M14 5h5v5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10 14L19 5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M19 14v5H5V5h5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.8"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.netnanny.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      class="pill glow-hover flex items-center justify-between gap-3 rounded-xl px-4 py-2 text-[color:var(--muted)] hover:text-[color:var(--text)]"
+                      aria-label="Net Nanny website"
+                    >
+                      <span>Net Nanny</span>
+                      <span
+                        class="inline-flex items-center gap-2 text-xs text-[color:var(--muted)]"
+                      >
+                        <span class="hidden sm:inline">netnanny.com</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          class="h-4 w-4"
+                        >
+                          <path
+                            d="M14 5h5v5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10 14L19 5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M19 14v5H5V5h5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.8"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.cybersitter.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      class="pill glow-hover flex items-center justify-between gap-3 rounded-xl px-4 py-2 text-[color:var(--muted)] hover:text-[color:var(--text)]"
+                      aria-label="CYBERsitter website"
+                    >
+                      <span>CYBERsitter</span>
+                      <span
+                        class="inline-flex items-center gap-2 text-xs text-[color:var(--muted)]"
+                      >
+                        <span class="hidden sm:inline">cybersitter.com</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          class="h-4 w-4"
+                        >
+                          <path
+                            d="M14 5h5v5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10 14L19 5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M19 14v5H5V5h5"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.8"
+                          />
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="minP3"
+                >
+                  In order to offer the best-possible protection of minors, we
+                  also rely on the support of parents and carers. Please keep
+                  your access details safe at all times (user ID, password and
+                  your question and answer combination).
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Definition -->
+              <section id="definition" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="defTitle"
+                    >Definition and consequences of problematic behavior</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="defP1"
+                >
+                  Problematic behavior in gaming is defined as behavior that
+                  damages the existence, work or financial situation of an
+                  individual or a family. Long-term gambling is certainly not
+                  acceptable as an individual’s personal situation and could
+                  have a negative overall impact on a person’s well-being.
+                </p>
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="defP2"
+                >
+                  The most dangerous overall impact is the psychological
+                  disorder of pathological gaming. This condition has to be
+                  treated seriously. Prolonged intervals of betting and gaming
+                  can lead to addiction problems.
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Problems in gaming -->
+              <section id="problems" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="pbgTitle"
+                    >Prevention of problems in gaming</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="pbgIntro"
+                >
+                  Here are our recommendations of principles to follow so that
+                  you can enjoy gaming responsibly:
+                </p>
+
+                <ul
+                  class="mt-4 list-disc pl-5 space-y-2 text-[15px] md:text-base"
+                >
+                  <li data-i18n="pbg1">
+                    Gaming is for fun, not a way of earning money.
+                  </li>
+                  <li data-i18n="pbg2">
+                    Make sure you play only when relaxed and concentrated.
+                  </li>
+                  <li data-i18n="pbg3">Take regular breaks.</li>
+                  <li data-i18n="pbg4">
+                    Decide your monthly gaming stake in advance. Independently
+                    of our standard deposit limits, you may set a lower amount
+                    as your own personal limit.
+                  </li>
+                  <li data-i18n="pbg5">
+                    Do not increase the maximum limit which you have decided for
+                    yourself.
+                  </li>
+                  <li data-i18n="pbg6">
+                    Before you start playing, decide the winning amount at which
+                    you will end the game.
+                  </li>
+                  <li data-i18n="pbg7">
+                    Decide beforehand how high your losses can be.
+                  </li>
+                  <li data-i18n="pbg8">
+                    Never play under the influence of alcohol or other
+                    substances.
+                  </li>
+                  <li data-i18n="pbg9">Never play when depressed.</li>
+                </ul>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Warning signs -->
+              <section id="warning" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="warnTitle"
+                    >How to recognize problematic behavior?</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="warnIntro"
+                >
+                  We would like to present certain parameters that can be
+                  warning signs or signals that can be considered as indicative
+                  for addiction problems or problematic behavior:
+                </p>
+
+                <ul
+                  class="mt-4 list-disc pl-5 space-y-2 text-[15px] md:text-base"
+                >
+                  <li data-i18n="w1">
+                    The player is heavily involved in games of chance. Thoughts
+                    constantly turn to gaming.
+                  </li>
+                  <li data-i18n="w2">
+                    The player gambles money that is intended to pay for his
+                    rent or groceries.
+                  </li>
+                  <li data-i18n="w3">
+                    The stakes wagered become higher and higher.
+                  </li>
+                  <li data-i18n="w4">
+                    Attempts to control/give up gaming are unsuccessful.
+                  </li>
+                  <li data-i18n="w5">
+                    The player becomes irritated and frustrated after attempting
+                    to reduce the extent of gaming.
+                  </li>
+                  <li data-i18n="w6">
+                    Gaming serves as a means of getting away from problems or
+                    unpleasant feelings.
+                  </li>
+                  <li data-i18n="w7">The player is trying to regain losses.</li>
+                  <li data-i18n="w8">
+                    The player lies about his gaming behavior.
+                  </li>
+                  <li data-i18n="w9">The player acts illegally.</li>
+                  <li data-i18n="w10">
+                    The player damages or loses other relationships or his job.
+                  </li>
+                  <li data-i18n="w11">
+                    The player relies on others to give him money.
+                  </li>
+                  <li data-i18n="w12">
+                    The player has obsessive thoughts about gambling or how to
+                    find money to gamble.
+                  </li>
+                  <li data-i18n="w13">
+                    The player drops activities or people that are important to
+                    him.
+                  </li>
+                </ul>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Recognizing problematic behavior -->
+              <section id="recognizing" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="recTitle"
+                    >Action taken after recognizing problematic behavior</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="recP1"
+                >
+                  In cases which can be traced back to gaming addiction further
+                  participation in the gaming line up is prohibited. As part of
+                  our efforts to address potential gambling-related issues and
+                  support players facing challenges with control, we send
+                  Responsible Gaming letters to players when we detect signs of
+                  problem gambling. This initiative aims to provide support and
+                  assistance to players who may be crossing the boundaries of
+                  responsible gaming.
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- NEW: Self exclusion and player protection (FULL text) -->
+              <section id="self-details" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="selfDetailsTitle"
+                    >Self exclusion and player protection</span
+                  >
+                </h2>
+
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP1"
+                >
+                  Meridianbet offers its users various self-protection measures
+                  to ensure responsible gaming enjoyment. We encourage our
+                  customers to use these self-limit tools. Self-protection
+                  measures requested are taken seriously and are valid for the
+                  agreed period of time.
+                </p>
+
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP2"
+                >
+                  Personal limit: In addition, Meridianbet offers all of its
+                  customers the opportunity to reduce their deposit limit to an
+                  amount which is below the standard limit. Meridianbet will
+                  only process requests to increase personal deposit limits
+                  after 24 hours at the earliest; requests to reduce limits will
+                  be implemented immediately.
+                </p>
+
+                <div class="mt-6 grid gap-4 md:grid-cols-3">
+                  <div class="pill rounded-2xl p-4">
+                    <h3 class="text-lg font-bold" data-i18n="depositLimitTitle">
+                      Deposit Limit
+                    </h3>
+                    <ul
+                      class="mt-3 space-y-1 text-sm text-[color:var(--muted)]"
+                    >
+                      <li data-i18n="depositLimit1">
+                        24 Hour Deposit Limit - You decide what is the limit of
+                        the funds you can deposit within 24 hours.
+                      </li>
+                      <li data-i18n="depositLimit2">
+                        Weekly Deposit Limit - You decide what is the limit of
+                        the funds you can deposit within one week.
+                      </li>
+                      <li data-i18n="depositLimit3">
+                        Monthly Deposit Limit - You decide what is the limit of
+                        the funds you can deposit within one month.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="pill rounded-2xl p-4">
+                    <h3 class="text-lg font-bold" data-i18n="betLimitTitle">
+                      Bet Limit
+                    </h3>
+                    <ul
+                      class="mt-3 space-y-1 text-sm text-[color:var(--muted)]"
+                    >
+                      <li data-i18n="betLimit1">
+                        24 Hour Bet Limit - You decide what is the limit of the
+                        funds you can bet within 24 hours.
+                      </li>
+                      <li data-i18n="betLimit2">
+                        Weekly Bet Limit - You decide what is the limit of the
+                        funds you can bet within one week.
+                      </li>
+                      <li data-i18n="betLimit3">
+                        Monthly Bet Limit - You decide what is the limit of the
+                        funds you can bet within one month.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="pill rounded-2xl p-4">
+                    <h3 class="text-lg font-bold" data-i18n="lossLimitTitle">
+                      Loss Limit
+                    </h3>
+                    <ul
+                      class="mt-3 space-y-1 text-sm text-[color:var(--muted)]"
+                    >
+                      <li data-i18n="lossLimit1">
+                        24 Hour Loss Limit - You decide what is the limit of the
+                        funds you can lose within 24 hours.
+                      </li>
+                      <li data-i18n="lossLimit2">
+                        Weekly Loss Limit - You decide what is the limit of the
+                        funds you can lose within one week.
+                      </li>
+                      <li data-i18n="lossLimit3">
+                        Monthly Loss Limit - You decide what is the limit of the
+                        funds you can lose within one month.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP3"
+                >
+                  Loss and Bet limits are checked every time you log on the
+                  website. If your losses or bets are above the limit, you will
+                  not be able to place a bet until the time period limit applied
+                  to is over. During this time, you can withdraw funds and
+                  access the website.
+                </p>
+
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP4"
+                >
+                  Self-exclusion: Meridianbet users are able to exclude
+                  themselves from further participation in the gaming line-up or
+                  make a request by email. Users can exclude themselves from the
+                  gaming line-up from one day up to 5 years or indefinitely.
+                </p>
+
+                <!-- HTML i18n (email link) -->
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n-html="selfDetailsP5"
+                ></p>
+
+                <!-- HTML i18n (email link) -->
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n-html="selfDetailsP6"
+                ></p>
+
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP7"
+                >
+                  We would like to inform you that your closure/self-exclusion
+                  will only come into effect at the point you receive
+                  confirmation from our Customer Support team that your account
+                  is now self-excluded.
+                </p>
+
+                <!-- HTML i18n (email link) -->
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n-html="selfDetailsP8"
+                ></p>
+
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP9"
+                >
+                  A notice by the player increasing the period of self-exclusion
+                  will be effective immediately upon its receipt by the Company,
+                  whereas a notice of decreasing it will be effective after at
+                  least 24 hours from the day on which Meridianbet receives the
+                  notice, and a notice by the player revoking an indefinite
+                  period of self-exclusion shall be effective after at least 7
+                  days from the day on which we receive the notice.
+                </p>
+
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP10"
+                >
+                  Meridianbet shall not be liable for any losses towards either
+                  party before the closure takes place or the self-exclusion
+                  period comes into effect.
+                </p>
+
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP11"
+                >
+                  Any unsettled bets with Meridianbet will be settled on the
+                  result of the event.
+                </p>
+
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="selfDetailsP12"
+                >
+                  You should also consider installing software that blocks
+                  access to internet gambling websites.
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Reality check -->
+              <section id="reality" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="realTitle"
+                    >Reality check</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="realP1"
+                >
+                  Set yourself a time limit before you start gambling and stick
+                  to it by setting an alarm. We strongly advise that you keep
+                  your device clock enabled whilst gambling so you can easily
+                  refer to it. This is the way to remind yourself how long you
+                  have been on line. Another way may be to utilize an online
+                  stopwatch or a timer to give an indicator when a certain time
+                  period has elapsed.
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Right to Refuse Service -->
+              <section id="refuse" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="refuseTitle"
+                    >The Right to Refuse Service or Bar the Players</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="refuseP1"
+                >
+                  Players who are suspected of displaying problem gambling
+                  behavior may be barred from registering, playing, or accessing
+                  services based on the severity of the concern and in
+                  accordance with legal and regulatory requirements.
+                </p>
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="refuseP2"
+                >
+                  The decision to refuse service or bar a player should be made
+                  collectively by the Compliance Team, in consultation with
+                  management, while considering the best interests of the player
+                  and the integrity of the gaming environment.
+                </p>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <!-- Staff onboarding and training -->
+              <section id="training" class="section rounded-2xl p-5 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold">
+                  <span class="title-accent" data-i18n="trainingTitle"
+                    >Staff onboarding and routine training procedures</span
+                  >
+                </h2>
+                <p
+                  class="mt-4 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="trainingP1"
+                >
+                  The Company is responsible for all training dedicated to
+                  teaching employees on how to recognize and how to handle
+                  problem gambling. The training is done at the onboarding stage
+                  with all employees that will be working with players, and a
+                  refresher training is conducted once a year.
+                </p>
+                <p
+                  class="mt-3 leading-relaxed text-[15px] md:text-base"
+                  data-i18n="trainingP2"
+                >
+                  Responsible Gambling training covers all aspects of the topic,
+                  including the different types of gambling, the negative
+                  effects that a gambling addiction can have on the gambler and
+                  their loved ones, the indicative signs of a gambling problem,
+                  and how to effectively respond to a customer who has declared
+                  a gambling problem.
+                </p>
+                <a
+                  class="text-sm flex justify-end"
+                  href="#top"
+                  onclick="window.scrollTo({top:0,behavior:'smooth'})"
+                  data-i18n="backTop"
+                >
+                  Back to top ↑
+                </a>
+              </section>
+
+              <div class="my-8 divider"></div>
+
+              <footer
+                class="mt-8 pb-2 text-center text-xs text-[color:var(--muted)]"
+              >
+                <span data-i18n="copyright"
+                  >© Meridianbet — Responsible Gaming Information</span
+                >
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const I18N = {
+        en: {
+          pageTitle: "Responsible Gaming",
+          pageSubtitle: "Information, guidance, and self-protection tools.",
+          navSecurity: "Security",
+          navAddiction: "Addiction",
+          navMinors: "Minors",
+          navDefinition: "Problem Behavior",
+          navWarning: "Warning signs",
+          navRecognizing: "Action taken",
+          navSelfDetails: "Self-protection (details)",
+          navRefuse: "Refuse service",
+          navTraining: "Training",
+          navSelf: "Self-protection",
+          navReality: "Reality check",
+
+          introTitle: "Our approach",
+          introP1:
+            "Meridianbet strives to create a responsible and humble gaming environment for each and everyone playing at Meridianbet. To most people gaming is socially enjoyable and a harmless source of entertainment.",
+          introP2:
+            "Every user can play within their financial means and receive the best possible service. But sometimes it just becomes too much and a small number of players just can't say no to that extra spin on the slots or that extra bet.",
+
+          secTitle: "Security of the player and the game",
+          secP1:
+            "We take responsibility for the security of our players. Protection of players is based on exclusion of minors from the product line-up and the protection of privacy, which involves responsible dealings with data and payment processing.",
+          secP2:
+            "Fairness and the random nature of the products offered are monitored closely by independent authorities. Marketing communication is also geared towards player protection: a fair gaming product only promises what it can deliver.",
+          secP3:
+            "Online monitoring at Meridianbet as well as the experience of our employees ensures protection against fraud. Manipulation of bets and money laundering are crimes and not a game.",
+
+          addTitle: "Protection against gaming addiction",
+          addP1:
+            "Betting should be considered as a fun way to spend time, not as a way to make money. Participation in bets and games of chance can lead to problems for a small group of customers.",
+          addP2:
+            "In order to offer customers the best possible support, all user contact related to responsible gaming is handled by a dedicated support team. This team works together with other departments and provides recommendations for customers on the extent to which it is possible for them to play responsibly.",
+
+          defTitle: "Definition and consequences of problematic behavior",
+          defP1:
+            "Problematic behavior in gaming is defined as behavior that damages the existence, work or financial situation of an individual or a family. Long-term gambling is certainly not acceptable as an individual’s personal situation and could have a negative overall impact on a person’s well-being.",
+          defP2:
+            "The most dangerous overall impact is the psychological disorder of pathological gaming. This condition has to be treated seriously. Prolonged intervals of betting and gaming can lead to addiction problems.",
+
+          pbgTitle: "Prevention of problems in gaming",
+          pbgIntro:
+            "Here are our recommendations of principles to follow so that you can enjoy gaming responsibly:",
+          pbg1: "Gaming is for fun, not a way of earning money.",
+          pbg2: "Make sure you play only when relaxed and concentrated.",
+          pbg3: "Take regular breaks.",
+          pbg4: "Decide your monthly gaming stake in advance. Independently of our standard deposit limits, you may set a lower amount as your own personal limit.",
+          pbg5: "Do not increase the maximum limit which you have decided for yourself.",
+          pbg6: "Before you start playing, decide the winning amount at which you will end the game.",
+          pbg7: "Decide beforehand how high your losses can be.",
+          pbg8: "Never play under the influence of alcohol or other substances.",
+          pbg9: "Never play when depressed.",
+
+          warnTitle: "How to recognize problematic behavior?",
+          warnIntro:
+            "We would like to present certain parameters that can be warning signs or signals that can be considered as indicative for addiction problems or problematic behavior:",
+          w1: "The player is heavily involved in games of chance. Thoughts constantly turn to gaming.",
+          w2: "The player gambles money that is intended to pay for his rent or groceries.",
+          w3: "The stakes wagered become higher and higher.",
+          w4: "Attempts to control/give up gaming are unsuccessful.",
+          w5: "The player becomes irritated and frustrated after attempting to reduce the extent of gaming.",
+          w6: "Gaming serves as a means of getting away from problems or unpleasant feelings.",
+          w7: "The player is trying to regain losses.",
+          w8: "The player lies about his gaming behavior.",
+          w9: "The player acts illegally.",
+          w10: "The player damages or loses other relationships or his job.",
+          w11: "The player relies on others to give him money.",
+          w12: "The player has obsessive thoughts about gambling or how to find money to gamble.",
+          w13: "The player drops activities or people that are important to him.",
+
+          recTitle: "Action taken after recognizing problematic behavior",
+          recP1:
+            "In cases which can be traced back to gaming addiction further participation in the gaming line up is prohibited. As part of our efforts to address potential gambling-related issues and support players facing challenges with control, we send Responsible Gaming letters to players when we detect signs of problem gambling. This initiative aims to provide support and assistance to players who may be crossing the boundaries of responsible gaming.",
+
+          selfDetailsTitle: "Self exclusion and player protection",
+          selfDetailsP1:
+            "Meridianbet offers its users various self-protection measures to ensure responsible gaming enjoyment. We encourage our customers to use these self-limit tools. Self-protection measures requested are taken seriously and are valid for the agreed period of time.",
+          selfDetailsP2:
+            "Personal limit: In addition, Meridianbet offers all of its customers the opportunity to reduce their deposit limit to an amount which is below the standard limit. Meridianbet will only process requests to increase personal deposit limits after 24 hours at the earliest; requests to reduce limits will be implemented immediately.",
+          depositLimitTitle: "Deposit Limit",
+          depositLimit1:
+            "24 Hour Deposit Limit - You decide what is the limit of the funds you can deposit within 24 hours.",
+          depositLimit2:
+            "Weekly Deposit Limit - You decide what is the limit of the funds you can deposit within one week.",
+          depositLimit3:
+            "Monthly Deposit Limit - You decide what is the limit of the funds you can deposit within one month.",
+          betLimitTitle: "Bet Limit",
+          betLimit1:
+            "24 Hour Bet Limit - You decide what is the limit of the funds you can bet within 24 hours.",
+          betLimit2:
+            "Weekly Bet Limit - You decide what is the limit of the funds you can bet within one week.",
+          betLimit3:
+            "Monthly Bet Limit - You decide what is the limit of the funds you can bet within one month.",
+          lossLimitTitle: "Loss Limit",
+          lossLimit1:
+            "24 Hour Loss Limit - You decide what is the limit of the funds you can lose within 24 hours.",
+          lossLimit2:
+            "Weekly Loss Limit - You decide what is the limit of the funds you can lose within one week.",
+          lossLimit3:
+            "Monthly Loss Limit - You decide what is the limit of the funds you can lose within one month.",
+          selfDetailsP3:
+            "Loss and Bet limits are checked every time you log on the website. If your losses or bets are above the limit, you will not be able to place a bet until the time period limit applied to is over. During this time, you can withdraw funds and access the website.",
+          selfDetailsP4:
+            "Self-exclusion: Meridianbet users are able to exclude themselves from further participation in the gaming line-up or make a request by email. Users can exclude themselves from the gaming line-up from one day up to 5 years or indefinitely.",
+
+          // EMAIL LINKED (HTML)
+          selfDetailsP5:
+            'During the self-exclusion period, the player will not have access to gaming services. However, they may request the withdrawal of any pending funds at any time. For any questions about the gaming account, including withdrawal requests, the player can reach us at <a class="link" href="mailto:info@meridianbet.com">info@meridianbet.com</a>.',
+          selfDetailsP6:
+            'Customers who have not registered on our website also have an option to exclude themselves prior to registration, by sending an email request to the Customer Support Team on: <a class="link" href="mailto:info@meridianbet.com">info@meridianbet.com</a>.',
+          selfDetailsP7:
+            "We would like to inform you that your closure/self-exclusion will only come into effect at the point you receive confirmation from our Customer Support team that your account is now self-excluded.",
+
+          // EMAIL LINKED (HTML) - FIXED
+          selfDetailsP8:
+            'The duration of a definite period of self-exclusion can be increased or decreased upon request of the relevant player. Players can extend a definite self-exclusion period by using the 24/7 live chat or contacting us at <a class="link" href="mailto:info@meridianbet.com">info@meridianbet.com</a>.',
+          selfDetailsP9:
+            "A notice by the player increasing the period of self-exclusion will be effective immediately upon its receipt by the Company, whereas a notice of decreasing it will be effective after at least 24 hours from the day on which Meridianbet receives the notice, and a notice by the player revoking an indefinite period of self-exclusion shall be effective after at least 7 days from the day on which we receive the notice.",
+          selfDetailsP10:
+            "Meridianbet shall not be liable for any losses towards either party before the closure takes place or the self-exclusion period comes into effect.",
+          selfDetailsP11:
+            "Any unsettled bets with Meridianbet will be settled on the result of the event.",
+          selfDetailsP12:
+            "You should also consider installing software that blocks access to internet gambling websites.",
+
+          refuseTitle: "The Right to Refuse Service or Bar the Players",
+          refuseP1:
+            "Players who are suspected of displaying problem gambling behavior may be barred from registering, playing, or accessing services based on the severity of the concern and in accordance with legal and regulatory requirements.",
+          refuseP2:
+            "The decision to refuse service or bar a player should be made collectively by the Compliance Team, in consultation with management, while considering the best interests of the player and the integrity of the gaming environment.",
+
+          trainingTitle: "Staff onboarding and routine training procedures",
+          trainingP1:
+            "The Company is responsible for all training dedicated to teaching employees on how to recognize and how to handle problem gambling. The training is done at the onboarding stage with all employees that will be working with players, and a refresher training is conducted once a year.",
+          trainingP2:
+            "Responsible Gambling training covers all aspects of the topic, including the different types of gambling, the negative effects that a gambling addiction can have on the gambler and their loved ones, the indicative signs of a gambling problem, and how to effectively respond to a customer who has declared a gambling problem.",
+
+          minTitle: "Protection of minors",
+          minP1:
+            "Meridianbet excludes minors (persons under the age of 18) from participation in online gaming. Confirmation of having reached the age of majority and date of birth is therefore a mandatory part of the registration. A copy of photographic identification is also required at this stage. Meridianbet takes its responsibility for preventing minors from taking part in gaming seriously.",
+          minP2:
+            "Also we recommend that you install software that enables you to block and filter web traffic in order to prevent minors from reaching betting and gambling websites.",
+          minP3:
+            "In order to offer the best-possible protection of minors, we also rely on the support of parents and carers. Please keep your access details safe at all times (user ID, password and your question and answer combination).",
+
+          selfTitle: "Self-exclusion and player protection",
+          selfP1:
+            "Meridianbet offers its users various self-protection measures to ensure responsible gaming enjoyment. We encourage our customers to use these self-limit tools.",
+          limitsTitle: "Limits",
+          limitsDesc:
+            "Choose daily, weekly, or monthly limits for deposits, bets, and losses.",
+          l1: "24 Hour / Weekly / Monthly Deposit Limit",
+          l2: "24 Hour / Weekly / Monthly Bet Limit",
+          l3: "24 Hour / Weekly / Monthly Loss Limit",
+          selfExTitle: "Self-exclusion",
+          selfExDesc:
+            "Exclude yourself from one day up to 5 years or indefinitely. During the self-exclusion period, you will not have access to gaming services.",
+          contactBtn: "Contact Support",
+
+          realTitle: "Reality check",
+          realP1:
+            "Set yourself a time limit before you start gambling and stick to it by setting an alarm. We strongly advise that you keep your device clock enabled whilst gambling so you can easily refer to it. This is the way to remind yourself how long you have been on line. Another way may be to utilize an online stopwatch or a timer to give an indicator when a certain time period has elapsed.",
+
+          footerNote:
+            "Responsible gaming is about staying in control and keeping it enjoyable.",
+          backTop: "Back to top ↑",
+          copyright: "© Meridianbet — Responsible Gaming Information",
+        },
+
+        fr: {
+          pageTitle: "Jeu responsable",
+          pageSubtitle: "Informations, conseils et outils d’auto-protection.",
+          navSecurity: "Sécurité",
+          navAddiction: "Addiction",
+          navMinors: "Mineurs",
+          navDefinition: "Comportement problématique",
+          navWarning: "Signaux d’alerte",
+          navRecognizing: "Mesures prises",
+          navSelfDetails: "Auto-protection (détails)",
+          navRefuse: "Refuser le service",
+          navTraining: "Formation",
+          navSelf: "Auto-protection",
+          navReality: "Rappel du réel",
+
+          introTitle: "Jeu Responsable",
+          introP1:
+            "Meridianbet s'efforce de créer un environnement de jeu responsable et respectueux pour chaque personne jouant sur Meridianbet. Pour la plupart des gens, le jeu est une source de divertissement agréable sur le plan social et sans danger. ",
+          introP2:
+            "Chaque utilisateur peut jouer dans les limites de ses moyens financiers et recevoir le meilleur service possible. Mais parfois, cela devient excessif et un petit nombre de joueurs ne peuvent tout simplement pas refuser ce tour supplémentaire aux machines à sous ou ce pari supplémentaire.",
+
+          secTitle: "Sécurité du joueur et du jeu",
+          secP1:
+            "Nous assumons la responsabilité de la sécurité de nos joueurs. La protection des joueurs repose sur l'exclusion des mineurs de la gamme de produits et la protection de la vie privée, qui implique une gestion responsable des données et du traitement des paiements.",
+          secP2:
+            "L'équité et le caractère aléatoire des produits proposés sont étroitement surveillés par des autorités indépendantes. La communication marketing est également orientée vers la protection des joueurs : un produit de jeu équitable ne promet que ce qu'il peut tenir.",
+          secP3:
+            "La surveillance en ligne chez Meridianbet ainsi que l'expérience de nos employés garantissent une protection contre la fraude. La manipulation des paris et le blanchiment d'argent sont des crimes et non un jeu.",
+
+          addTitle: "Protection contre la dépendance au jeu",
+          addP1:
+            "Les paris doivent être considérés comme une façon amusante de passer du temps, et non comme un moyen de gagner de l'argent. La participation aux paris et aux jeux de hasard peut entraîner des problèmes pour un petit groupe de clients.",
+          addP2:
+            "Afin d'offrir aux clients le meilleur soutien possible, tous les contacts utilisateurs liés au jeu responsable sont traités par une équipe d'assistance dédiée. Cette équipe travaille en collaboration avec d'autres départements et fournit des recommandations aux clients sur la mesure dans laquelle il leur est possible de jouer de manière responsable.",
+
+          defTitle: "Définition et conséquences du comportement problématique",
+          defP1:
+            "Le comportement problématique dans le jeu est défini comme un comportement qui nuit à l'existence, au travail ou à la situation financière d'un individu ou d'une famille. Les jeux d'argent à long terme ne sont certainement pas acceptables pour la situation personnelle d'un individu et pourraient avoir un impact négatif global sur le bien-être d'une personne.",
+          defP2:
+            "L'impact global le plus dangereux est le trouble psychologique du jeu pathologique. Cette condition doit être traitée sérieusement. Des périodes prolongées de paris et de jeux peuvent entraîner des problèmes de dépendance.",
+
+          pbgTitle: "Prévention des problèmes liés au jeu",
+          pbgIntro:
+            "Voici nos recommandations de principes à suivre pour que vous puissiez profiter du jeu de manière responsable:",
+          pbg1: "Le jeu est pour le plaisir, pas un moyen de gagner de l'argent.",
+          pbg2: "Assurez-vous de jouer uniquement lorsque vous êtes détendu et concentré.",
+          pbg3: "Prenez des pauses régulières.",
+          pbg4: "Décidez à l'avance de votre mise de jeu mensuelle. Indépendamment de nos limites de dépôt standard, vous pouvez fixer un montant inférieur comme votre propre limite personnelle.",
+          pbg5: "N'augmentez pas la limite maximale que vous avez décidée pour vous-même.",
+          pbg6: "Avant de commencer à jouer, décidez du montant de gain auquel vous mettrez fin au jeu.",
+          pbg7: "Décidez à l'avance du niveau de pertes que vous pouvez accepter.",
+          pbg8: "Ne jouez jamais sous l'influence de l'alcool ou d'autres substances.",
+          pbg9: "Ne jouez jamais lorsque vous êtes déprimé.",
+
+          warnTitle: "Comment reconnaître un comportement problématique ?",
+          warnIntro:
+            "Nous souhaitons présenter certains paramètres qui peuvent être des signes d'alerte ou des signaux pouvant être considérés comme indicatifs de problèmes de dépendance ou de comportement problématique:",
+          w1: "Le joueur est fortement impliqué dans les jeux de hasard. Ses pensées se tournent constamment vers le jeu.",
+          w2: "Le joueur mise de l'argent destiné à payer son loyer ou ses courses.",
+          w3: "Les mises pariées deviennent de plus en plus élevées.",
+          w4: "Les tentatives de contrôler/arrêter le jeu sont infructueuses.",
+          w5: "Le joueur devient irrité et frustré après avoir tenté de réduire l'étendue du jeu.",
+          w6: "Le jeu sert de moyen de fuir les problèmes ou les sentiments désagréables.",
+          w7: "Le joueur essaie de récupérer ses pertes.",
+          w8: "Le joueur ment sur son comportement de jeu.",
+          w9: "Le joueur agit illégalement.",
+          w10: "Le joueur endommage ou perd d'autres relations ou son emploi.",
+          w11: "Le joueur compte sur les autres pour lui donner de l'argent.",
+          w12: "Le joueur a des pensées obsessionnelles concernant le jeu ou comment trouver de l'argent pour jouer.",
+          w13: "Le joueur abandonne des activités ou des personnes qui sont importantes pour lui.",
+
+          recTitle:
+            "Mesures prises après avoir reconnu un comportement problématique",
+          recP1:
+            "Dans les cas qui peuvent être attribués à la dépendance au jeu, toute participation ultérieure à la gamme de jeux est interdite. Dans le cadre de nos efforts pour aborder les problèmes potentiels liés au jeu et soutenir les joueurs confrontés à des difficultés de contrôle, nous envoyons des lettres de Jeu Responsable aux joueurs lorsque nous détectons des signes de jeu problématique. Cette initiative vise à fournir un soutien et une assistance aux joueurs qui pourraient franchir les limites du jeu responsable.",
+
+          selfDetailsTitle: "Auto-exclusion et protection du joueur",
+          selfDetailsP1:
+            "Meridianbet offre à ses utilisateurs diverses mesures d'auto-protection pour garantir un plaisir de jeu responsable. Nous encourageons nos clients à utiliser ces outils d'auto-limitation. Les mesures d'auto-protection demandées sont prises au sérieux et sont valables pour la période convenue.",
+          selfDetailsP2:
+            "Limite personnelle : En outre, Meridianbet offre à tous ses clients la possibilité de réduire leur limite de dépôt à un montant inférieur à la limite standard. Meridianbet ne traitera les demandes d'augmentation des limites de dépôt personnelles qu'après 24 heures au plus tôt ; les demandes de réduction des limites seront mises en œuvre immédiatement.",
+          depositLimitTitle: "Limite de dépôt",
+          depositLimit1:
+            "Limite de dépôt sur 24 heures - Vous décidez de la limite des fonds que vous pouvez déposer en 24 heures.",
+          depositLimit2:
+            "Limite de dépôt hebdomadaire - Vous décidez de la limite des fonds que vous pouvez déposer en une semaine.",
+          depositLimit3:
+            "Limite de dépôt mensuelle - Vous décidez de la limite des fonds que vous pouvez déposer en un mois.",
+          betLimitTitle: "Limite de pari",
+          betLimit1:
+            "Limite de pari sur 24 heures - Vous décidez de la limite des fonds que vous pouvez parier en 24 heures.",
+          betLimit2:
+            "Limite de pari hebdomadaire - Vous décidez de la limite des fonds que vous pouvez parier en une semaine.",
+          betLimit3:
+            "Limite de pari mensuelle - Vous décidez de la limite des fonds que vous pouvez parier en un mois.",
+          lossLimitTitle: "Limite de perte",
+          lossLimit1:
+            "Limite de perte sur 24 heures - Vous décidez de la limite des fonds que vous pouvez perdre en 24 heures.",
+          lossLimit2:
+            "Limite de perte hebdomadaire - Vous décidez de la limite des fonds que vous pouvez perdre en une semaine.",
+          lossLimit3:
+            "Limite de perte mensuelle - Vous décidez de la limite des fonds que vous pouvez perdre en un mois.",
+          selfDetailsP3:
+            "Les limites de perte et de pari sont vérifiées chaque fois que vous vous connectez au site web. Si vos pertes ou paris dépassent la limite, vous ne pourrez pas placer de pari jusqu'à ce que la période de temps à laquelle la limite s'applique soit terminée. Pendant ce temps, vous pouvez retirer des fonds et accéder au site web.",
+          selfDetailsP4:
+            "Auto-exclusion : Les utilisateurs de Meridianbet peuvent s'exclure de toute participation ultérieure à la gamme de jeux ou faire une demande par e-mail. Les utilisateurs peuvent s'exclure de la gamme de jeux d'un jour jusqu'à 5 ans ou indéfiniment.",
+
+          // EMAIL LINKED (HTML) - FIXED
+          selfDetailsP5:
+            "Pendant la période d'auto-exclusion, le joueur n'aura pas accès aux services de jeu. Cependant, il peut demander le retrait de tous fonds en attente à tout moment. Pour toute question concernant le compte de jeu, y compris les demandes de retrait, le joueur peut nous joindre à <a class='link' href='mailto:info@meridianbet.com'>info@meridianbet.com</a>.",
+          selfDetailsP6:
+            "Les clients qui ne se sont pas inscrits sur notre site web ont également la possibilité de s'exclure avant l'inscription, en envoyant une demande par e-mail à l'équipe du Service Client à: <a class='link' href='mailto:info@meridianbet.com'>info@meridianbet.com</a>.",
+          selfDetailsP7:
+            "Nous souhaitons vous informer que votre fermeture/auto-exclusion ne prendra effet qu'au moment où vous recevrez la confirmation de notre équipe du Service Client que votre compte est maintenant auto-exclu.",
+
+          // EMAIL LINKED (HTML) - FIXED
+          selfDetailsP8:
+            "La durée d'une période définie d'auto-exclusion peut être augmentée ou diminuée sur demande du joueur concerné. Les joueurs peuvent prolonger une période d'auto-exclusion définie en utilisant le chat en direct 24h/24 et 7j/7 ou en nous contactant à <a class='link' href='mailto:info@meridianbet.com'>info@meridianbet.com</a>.",
+          selfDetailsP9:
+            "Un avis du joueur augmentant la période d'auto-exclusion prendra effet immédiatement dès sa réception par la Société, tandis qu'un avis de diminution prendra effet au moins 24 heures après le jour où Meridianbet reçoit l'avis, et un avis du joueur révoquant une période d'auto-exclusion indéfinie prendra effet au moins 7 jours après le jour où nous recevons l'avis.",
+          selfDetailsP10:
+            "Meridianbet ne sera pas responsable des pertes envers l'une ou l'autre partie avant que la fermeture n'ait lieu ou que la période d'auto-exclusion n'entre en vigueur.",
+          selfDetailsP11:
+            "Tous les paris non réglés avec Meridianbet seront réglés sur le résultat de l'événement.",
+          selfDetailsP12:
+            "Vous devriez également envisager d'installer un logiciel qui bloque l'accès aux sites web de jeux d'argent sur Internet.",
+
+          refuseTitle:
+            "Le droit de refuser le service ou d'interdire les joueurs",
+          refuseP1:
+            "Les joueurs soupçonnés de présenter un comportement de jeu problématique peuvent se voir interdire l'inscription, le jeu ou l'accès aux services en fonction de la gravité de la préoccupation et conformément aux exigences légales et réglementaires.",
+          refuseP2:
+            "La décision de refuser le service ou d'interdire un joueur doit être prise collectivement par l'équipe de Conformité, en consultation avec la direction, tout en tenant compte des meilleurs intérêts du joueur et de l'intégrité de l'environnement de jeu.",
+
+          trainingTitle:
+            "Procédures d'intégration du personnel et de formation de routine",
+          trainingP1:
+            "La Société est responsable de toute formation dédiée à l'enseignement aux employés sur la façon de reconnaître et de gérer le jeu problématique. La formation est effectuée au stade de l'intégration avec tous les employés qui travailleront avec les joueurs, et une formation de rappel est effectuée une fois par an.",
+          trainingP2:
+            "La formation sur le Jeu Responsable couvre tous les aspects du sujet, y compris les différents types de jeux d'argent, les effets négatifs qu'une dépendance au jeu peut avoir sur le joueur et ses proches, les signes indicatifs d'un problème de jeu et comment répondre efficacement à un client qui a déclaré un problème de jeu.",
+
+          minTitle: "Protection des mineurs",
+          minP1:
+            "Meridianbet exclut les mineurs (personnes de moins de 18 ans) de la participation aux jeux en ligne. La confirmation d'avoir atteint l'âge de la majorité et la date de naissance constituent donc une partie obligatoire de l'inscription. Une copie d'une pièce d'identité avec photo est également requise à ce stade. Meridianbet prend au sérieux sa responsabilité d'empêcher les mineurs de participer aux jeux.",
+          minP2:
+            "Nous recommandons également d'installer un logiciel qui vous permet de bloquer et de filtrer le trafic web afin d'empêcher les mineurs d'accéder aux sites de paris et de jeux d'argent.",
+          minP3:
+            "Afin d'offrir la meilleure protection possible aux mineurs, nous comptons également sur le soutien des parents et des tuteurs. Veuillez garder vos informations d'accès en sécurité à tout moment (identifiant utilisateur, mot de passe et votre combinaison de question et réponse).",
+
+          selfTitle: "Auto-exclusion et protection du joueur",
+          selfP1:
+            "Meridianbet propose des mesures d’auto-protection pour un jeu responsable.",
+          limitsTitle: "Limites",
+          limitsDesc:
+            "Définissez des limites journalières, hebdomadaires ou mensuelles pour les dépôts, les mises et les pertes.",
+          l1: "Limite de dépôt : 24 h / semaine / mois",
+          l2: "Limite de mise : 24 h / semaine / mois",
+          l3: "Limite de perte : 24 h / semaine / mois",
+          selfExTitle: "Auto-exclusion",
+          selfExDesc:
+            "Excluez-vous de 1 jour à 5 ans ou indéfiniment. Pendant l’auto-exclusion, l’accès aux services est bloqué.",
+          contactBtn: "Contacter le support",
+
+          realTitle: "Vérification de la réalité",
+          realP1:
+            "Fixez-vous une limite de temps avant de commencer à jouer et respectez-la en réglant une alarme. Nous vous conseillons vivement de garder l'horloge de votre appareil activée pendant que vous jouez afin de pouvoir vous y référer facilement. C'est la façon de vous rappeler combien de temps vous avez été en ligne. Une autre façon peut être d'utiliser un chronomètre en ligne ou une minuterie pour indiquer quand une certaine période de temps s'est écoulée.",
+
+          footerNote:
+            "Le jeu responsable, c’est garder le contrôle et préserver le plaisir.",
+          backTop: "Retour en haut ↑",
+          copyright: "© Meridianbet — Informations sur le jeu responsable",
+        },
+      };
+
+      function applyLang(lang) {
+        document.documentElement.lang = lang;
+
+        // plain text
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const value = I18N?.[lang]?.[key];
+          if (typeof value === "string") el.textContent = value;
+        });
+
+        // html (allows <a> etc.)
+        document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-html");
+          const value = I18N?.[lang]?.[key];
+          if (typeof value === "string") el.innerHTML = value;
+        });
+
+        document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+          const isActive = btn.getAttribute("data-lang-btn") === lang;
+          btn.classList.toggle("lang-active", isActive);
+        });
+
+        try {
+          localStorage.setItem("rg_lang", lang);
+        } catch {}
+      }
+
+      document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+        btn.addEventListener("click", () =>
+          applyLang(btn.getAttribute("data-lang-btn"))
+        );
+      });
+
+      (function init() {
+        let saved = null;
+        try {
+          saved = localStorage.getItem("rg_lang");
+        } catch {}
+        applyLang(saved || "en");
+      })();
+    </script>
+  </body>
+</html>
