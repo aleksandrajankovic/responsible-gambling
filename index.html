@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
     <title>Responsible Gaming – Supergooal</title>
 
     <!-- Google Fonts -->
@@ -50,12 +50,7 @@
             rgba(57, 111, 133, 0.12) 48%,
             rgba(22, 35, 42, 0) 78%
           ),
-          radial-gradient(
-            1000px 700px at 110% 20%,
-            rgba(244, 192, 10, 0.18),
-            rgba(244, 192, 10, 0.06) 50%,
-            rgba(22, 35, 42, 0) 82%
-          ),
+       
           linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.04),
@@ -99,14 +94,12 @@
 
       .card-shell {
         background: rgba(16, 24, 28, 0.35);
-        border: 1px solid var(--border-soft);
         box-shadow: var(--shadow);
         backdrop-filter: blur(8px);
       }
 
       .card {
         background: var(--card-bg);
-        border: 1px solid var(--border-soft);
       }
 
       .section {
@@ -222,7 +215,7 @@
 
   <body class="min-h-screen">
     <main class="mx-auto max-w-4xl px-4 py-8 md:py-12">
-      <div class="card-shell rounded-2xl p-3 md:p-4">
+      <div class="card-shell rounded-2xl">
         <div class="rounded-2xl overflow-hidden">
           <div class="card rounded-2xl">
             <header
@@ -263,20 +256,6 @@
                 <div class="flex items-center gap-2">
                   <button
                     type="button"
-                    data-lang-btn="en"
-                    class="relative z-30 flex items-center justify-center w-[44px] h-[36px] bg-white/10 border border-white/20 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:bg-white/15 transition rounded-[10px]"
-                    aria-label="Switch to English"
-                    title="English"
-                  >
-                    <img
-                      src="./img/en.svg"
-                      alt="English"
-                      class="w-[22px] h-[22px] rounded-[6px] object-cover"
-                    />
-                  </button>
-
-                  <button
-                    type="button"
                     data-lang-btn="fr"
                     class="relative z-30 flex items-center justify-center w-[44px] h-[36px] bg-white/10 border border-white/20 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:bg-white/15 transition rounded-[10px]"
                     aria-label="Switch to French"
@@ -285,6 +264,19 @@
                     <img
                       src="./img/fr.svg"
                       alt="Français"
+                      class="w-[22px] h-[22px] rounded-[6px] object-cover"
+                    />
+                  </button>
+                  <button
+                    type="button"
+                    data-lang-btn="en"
+                    class="relative z-30 flex items-center justify-center w-[44px] h-[36px] bg-white/10 border border-white/20 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:bg-white/15 transition rounded-[10px]"
+                    aria-label="Switch to English"
+                    title="English"
+                  >
+                    <img
+                      src="./img/en.svg"
+                      alt="English"
                       class="w-[22px] h-[22px] rounded-[6px] object-cover"
                     />
                   </button>
